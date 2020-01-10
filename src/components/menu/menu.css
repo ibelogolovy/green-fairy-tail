@@ -1,0 +1,51 @@
+.menu-buttons {
+    grid-area: navigation;
+    /* padding: 5%; */
+    color: white;
+    justify-self:center;
+}
+
+.menu-buttons > .button  {
+  font-size: .9rem;
+    margin: 10px;
+    padding: 15px;
+    border: 1.5px solid #f7f7f7;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    display:inline-block;
+    transition: 0.3s;
+  }
+  .menu-buttons > .button:after {
+    position: absolute;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    background: #f7f7f7;
+  }
+  .menu-buttons > .button:hover {
+    cursor: pointer;
+  }
+  .menu-buttons > .button:hover:after {
+    width: 100%;
+    left: 0;
+  }
+  .menu-buttons > .button:hover {
+    border-radius: 15px;
+  }
+  .menu-buttons > .button:hover:after {
+    width: 0%;
+  }
+ 
+  @media (min-width:320px) and (max-width:800px) {
+    .menu-buttons > .button  {
+      font-size: .7rem;
+      margin: 1px;
+      padding: 10px;
+      border: .5px solid #f7f7f7;
+    }
+  }

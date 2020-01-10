@@ -1,0 +1,60 @@
+header {
+    grid-area: header;
+    width: 50%;
+    justify-self: center;
+}
+
+.header-back {
+  position: absolute;
+  z-index:-1;
+  overflow: hidden;
+}
+
+@media (min-width:801px)  {
+/* шары на фоне */
+.header-back > .back-circle1 {
+    width:75%;
+    margin-left:-13%;
+    margin-top:.5%;
+}
+
+.header-back > .back-circle3 {
+  
+    width:60%;
+    margin-top: -112%;
+    margin-left: 42%;
+
+
+}
+
+.header-back > .back-circle2 {
+    margin-top: -5.5%;
+    margin-left: 58%;
+    width:70%;
+    
+}
+/* конец шаров на фоне */
+}
+@media (min-width:320px) and (max-width:800px) {
+/* шары на фоне */
+.header-back > .back-circle1 {
+  width:100%;
+  margin-top:-50%;
+}
+
+.header-back > .back-circle3 {
+  width:70%;
+  margin-top: -15%;
+  margin-left: -30%;
+}
+
+.header-back > .back-circle2 {
+  margin-top: -68%;
+  margin-left: 58%;
+  width:70%;
+  
+}
+/* конец шаров на фоне */
+}
+
+
