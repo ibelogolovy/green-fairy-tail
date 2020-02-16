@@ -4,10 +4,10 @@
 
 
 # testing
-/src/main/java/resources/application.properties
 
 # production
 /build
+/src/main/java/resources/application.properties
 
 # misc
 .DS_Store
