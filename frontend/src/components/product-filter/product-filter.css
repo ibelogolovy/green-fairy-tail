@@ -1,0 +1,22 @@
+.product-filter {
+    color:gray;
+}
+
+.category-contaiter .category {
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    height: 15px;
+    margin: 15px;
+    padding:3px 15px 6px 15px;
+    border-radius: 10px;
+}
+
+.category-contaiter .category:hover {
+    background-color: #871486;
+    color:whitesmoke;
+}
+
+.category-contaiter {
+    display: inline-flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}

@@ -1,0 +1,110 @@
+header {
+    grid-area: header;
+    /* width: 50%; */
+    display: inline-block;
+    text-align: center;
+}
+
+.header-info {
+  /* position: absolute; */
+  color:whitesmoke;
+}
+
+.header-back {
+  position: absolute;
+  z-index:-1;
+  overflow: hidden;
+  height: 100%;
+}
+
+.about-info {
+  grid-area: about;
+  margin: 1% 10% 0 10%;
+  text-align: center;
+  color: white;
+}
+
+@media (min-width:801px)  {
+/* шары на фоне */
+.header-back > .back-circle-1 {
+    width:75%;
+    margin-left:-13%;
+    margin-top:.5%;
+
+}
+
+.header-back > .back-circle-3 {
+    width:60%;
+    margin-top: -112%;
+    margin-left: 42%;
+    /* transition: all .5s, border-radius .5s, top .5s;  */
+}
+
+.header-back > .back-circle-2 {
+    margin-top: -5.5%;
+    margin-left: 58%;
+    width:70%;
+    
+}
+
+/* расширение (коряво - 1 круг остается на странице отрендеренным) */
+
+.header-back.expanded .back-circle-2   {
+  display: none;
+  
+}
+/* .header-back.expanded .back-circle-1   {
+  display: none;
+} */
+
+@keyframes fillRaise {
+  from {
+    /* width: inherit; */
+  }
+  to {
+    width: 120%;
+    margin-top: -110%;
+    margin-left: -10%;
+  }
+}
+
+.header-back.expanded .back-circle-3   {
+  /* width: 120%; */
+  /* transition: all .5s, border-radius .5s, top .5s; */
+  animation: .3s fillRaise;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.header-back.expanded {
+  position: fixed;
+  transition: 2s; 
+  background-color: #871486;
+}
+
+/* конец шаров на фоне */
+}
+@media (min-width:320px) and (max-width:800px) {
+/* шары на фоне */
+.header-back > .back-circle-1 {
+  width:100%;
+  margin-top:-50%;
+}
+
+.header-back > .back-circle-3 {
+  width:70%;
+  margin-top: -15%;
+  margin-left: -30%;
+}
+
+.header-back > .back-circle-2 {
+  margin-top: -68%;
+  margin-left: 58%;
+  width:70%;
+  
+}
+/* конец шаров на фоне */
+}
+
+

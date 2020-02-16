@@ -1,0 +1,41 @@
+footer  {
+  bottom: 0;
+  grid-area: footer;
+    width: 100%;
+    color:whitesmoke;
+}
+
+footer  .contact {
+    margin-right: 17%;
+    margin-top: 1%;
+    float: right;
+}
+
+footer .company {
+    margin-top: 10%;
+    margin-left: 5%;
+    float: left;
+}
+
+.footer-back {
+  /* position: absolute; */
+  z-index: -2;
+  overflow: hidden;
+  grid-area: footer;
+  height: 11em;
+}
+
+/* шары на фоне */
+.footer-back > .back-circle1 {
+    width:75%;
+    margin-left:-20%;
+    margin-top:-30%;
+    
+}
+
+.footer-back > .back-circle2 {
+    margin-top: -45%;
+    margin-left: 40%;
+    width:70%;
+}
+/* конец шаров на фоне */
