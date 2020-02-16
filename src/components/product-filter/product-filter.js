@@ -5,7 +5,7 @@ import './product-filter.css';
 const ProductFilter = () => {
     return (
       <div className="product-filter">
-          Фильтр1
+           По категории:
           <div className = "category-contaiter">
               <div className="category">
                   Хвойные

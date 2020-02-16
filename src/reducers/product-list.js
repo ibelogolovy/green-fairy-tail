@@ -13,7 +13,7 @@ const updateProductList = (state, action) => {
   switch (action.type) {
     case actionTypes.FETCH_PRODUCTS_REQUESTED:
       return {
-        ...state.products,
+        ...state.productList,
         loading:true,
         error: null
       };
@@ -32,7 +32,7 @@ const updateProductList = (state, action) => {
         error: action.payload
       };
     default:
-      return state.products;
+      return state.productList;
   }
 };
 

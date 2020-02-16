@@ -10,7 +10,7 @@ const productsLoaded = (newProducts) => {
 
 const productLoaded = (product) => {
   return {
-    type: actionTypes.FETCH_PRODUCTS_SUCCESS,
+    type: actionTypes.FETCH_PRODUCT_SUCCESS,
     payload: product
   };
 };
@@ -21,10 +21,9 @@ const productRequested = () => {
   };
 };
 
-const productError = (error) => {
+const productsRequested = () => {
   return {
-    type: actionTypes.FETCH_PRODUCTS_ERROR,
-    payload: error
+    type: actionTypes.FETCH_PRODUCTS_REQUESTED
   };
 };
 
@@ -35,9 +34,27 @@ const productError = (error) => {
   };
 };
 
+const productsError = (error) => {
+  return {
+    type: actionTypes.FETCH_PRODUCTS_ERROR,
+    payload: error
+  };
+};
 
-const fetchProducts = (productService) => () => (dispatch) => {
-  dispatch(booksRequested());
+const aboutCircleOpened = () => {
+  return {
+    type: actionTypes.OPEN_ABOUTCIRCLE
+  };
+};
+
+const aboutCircleClosed= () => {
+  return {
+    type: actionTypes.CLOSE_ABOUTCIRCLE
+  };
+};
+
+const fetchProducts = (productService, dispatch) => () => {
+  dispatch(productsRequested());
   productService.getProducts()
     .then((data) => dispatch(productsLoaded(data)))
     .catch((error) => dispatch(productsError(error)));
@@ -52,5 +69,7 @@ const fetchProduct = (productService) => (id) => (dispatch) => {
 
 export {
   fetchProducts,
-  fetchProduct
+  fetchProduct,
+  aboutCircleOpened,
+  aboutCircleClosed
 };

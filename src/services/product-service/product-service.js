@@ -1,37 +1,48 @@
+
+
+
+
 export default class ProductService {
     productsData = [
       { id: 1,
         title: 'Дерево 1',
+        category: 1,
         price: 32,
         coverImage:'',
       },
       { id: 2,
         title: 'Дерево 2',
+        category: 1,
         price: 32,
         coverImage:''
       },
       { id: 3,
         title: 'Дерево 3',
+        category: 1,
         price: 4.79,
         coverImage:''
       },
       { id: 4,
         title: 'Дерево 4',
+        category: 2,
         price: 5.99,
         coverImage:''
       },
       { id: 5,
         title: 'Дерево 5',
+        category: 1,
         price: 5.99,
         coverImage:''
       },
       { id: 6,
         title: 'Дерево 6',
+        category: 1,
         price: 5.05,
         coverImage:''
       },
       { id: 7,
         title: 'Дерево 7',
+        category: 1,
         price: 5.99,
         coverImage:''
       }
@@ -46,15 +57,31 @@ export default class ProductService {
         ],
         description: 'самое крутое дерево на свете'
       }
-    ]
+    ];
+
+    categoryData = [
+      {
+        id: 1,
+        name: "Хвойные"
+      },
+      {
+        id: 2,
+        name: "Лиственные"
+      }
+    ];
   
     getProducts() {
       return new Promise((resolve, reject) => {
         setTimeout(()=>{
-          // if (Math.random() > 0.75) {
-          //   reject(new Error('Something bad happened!'));
-          // } else resolve(this.data);
-          resolve(this.productsData)
+          fetch('/api/products/', { 
+            method: 'get', 
+            headers: new Headers({
+              'Authorization': 'Basic '+btoa('admin:$2a$10$AjHGc4x3Nez/p4ZpvFDWeO6FGxee/cVqj5KHHnHfuLnIOzC5ag4fm'), 
+              'Content-Type': 'application/x-www-form-urlencoded'
+            })
+          }).then((response) => response.json()).then((responseData) => {
+            resolve(responseData);
+          });
         }, 700);
       });
     }
@@ -74,9 +101,19 @@ export default class ProductService {
       });
     }
 
+    getCategory() {
+      return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+          // if (Math.random() > 0.75) {
+          //   reject(new Error('Something bad happened!'));
+          // } else resolve(this.data);
+          resolve(this.categoryData)
+        }, 500);
+      });
+    }
     setProduct(productId) {
         return new Promise((resolve, reject) => {
             resolve(true);
-        });
+    });
     }
   }

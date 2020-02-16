@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Catalog from '../../components/catalog';
+import ProductList from '../product-list-container';
 import Intro from '../../components/intro';
 
 
 const HomePage = () => {
   return (
-    <React.Fragment>
+    <div className="page-content ">
       <Intro/>
-      <Catalog/>
-    </React.Fragment>
+      <ProductList/>
+    </div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './menu.css';
 
@@ -6,10 +7,18 @@ import './menu.css';
 const Menu = () => {
   return (
         <div className="menu-buttons">
-            <div className="button">Каталог</div>
-            <div className="button">О нас</div>
-            <div className="button">Контакты</div>
-            <div className="button">Обратный звонок</div>
+            <Link to="/about">
+              <div className="button">Каталог</div>
+            </Link>
+            <Link to="/about">
+              <div className="button">О нас</div>
+            </Link>
+            <Link to="/about">
+              <div className="button">Контакты</div>
+            </Link>
+            <Link to="/about">
+              <div className="button">Обратный звонок</div>
+            </Link>
         </div>
   );
 };

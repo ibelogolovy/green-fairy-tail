@@ -19,9 +19,10 @@ footer .company {
 
 .footer-back {
   /* position: absolute; */
-  z-index: -1;
-  /* overflow: hidden; */
+  z-index: -2;
+  overflow: hidden;
   grid-area: footer;
+  height: 11em;
 }
 
 /* шары на фоне */
