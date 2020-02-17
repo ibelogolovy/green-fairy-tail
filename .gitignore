@@ -1,4 +1,3 @@
-application.properties
 *.java.hsp
 *.sonarj
 *.sw*
@@ -37,3 +36,7 @@ out
 test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
+
+# Local configuration file (sdk path, etc)
+local.properties
+.properties
