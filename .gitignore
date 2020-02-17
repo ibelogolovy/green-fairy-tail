@@ -1,8 +1,8 @@
+application.properties
 *.java.hsp
 *.sonarj
 *.sw*
 .DS_Store
-.settings
 .springBeans
 bingit
 build.sh
@@ -26,7 +26,6 @@ buildSrc/build
 /integration-tests/build
 /src/asciidoc/build
 target/
-/src/main/resources/application.properties
 
 
 # IDEA artifacts and output dirs
