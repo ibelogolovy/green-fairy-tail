@@ -1,10 +1,10 @@
+application.properties
 *.java.hsp
 *.sonarj
 *.sw*
 .DS_Store
 .settings
 .springBeans
-*.properties
 bingit
 build.sh
 integration-repo
