@@ -4,8 +4,8 @@
 .DS_Store
 .settings
 .springBeans
-.properties
-bin
+*.properties
+bingit
 build.sh
 integration-repo
 ivy-cache
