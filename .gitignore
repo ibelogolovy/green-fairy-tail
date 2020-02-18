@@ -1,41 +1,14 @@
-*.java.hsp
-*.sonarj
-*.sw*
 .DS_Store
-.springBeans
-bingit
-build.sh
-integration-repo
-ivy-cache
-jxl.log
-jmx.log
-derby.log
-spring-test/test-output/
 .gradle
-argfile*
-pom.xml
-activemq-data/
+/build/
+classes
+!gradle/wrapper/gradle-wrapper.jar
 
-classes/
-/build
-buildSrc/build
-/spring-*/build
-/spring-core/kotlin-coroutines/build
-/framework-bom/build
-/integration-tests/build
-/src/asciidoc/build
-target/
-
-
-# IDEA artifacts and output dirs
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
 *.ipr
-*.iws
-.idea
-out
-test-output
-atlassian-ide-plugin.xml
-.gradletasknamecache
 
 # Local configuration file (sdk path, etc)
 local.properties
