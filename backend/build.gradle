@@ -14,7 +14,7 @@ repositories {
 }
 
 
-task stage(dependsOn: ['clean', ':frontend:copyToBackend', 'compileJava'])
+task stage(dependsOn: ['clean', ':frontend:copyFrontend', 'compileJava'])
 
 //build.mustRunAfter(clean, )
 //

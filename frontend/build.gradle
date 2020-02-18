@@ -2,13 +2,13 @@ plugins {
 	id "com.github.node-gradle.node" version "2.2.1"
 }
 
-task copyToBackend(type: Copy) {
+task copyFrontend(type: Copy) {
 	from 'build'
 	into '../backend/build/resources/main/static/.'
 }
 
-task appNpmBuild(type: NpmTask) {
-	args = ["run", "build"]
+task buildFrontend(type: Exec) {
+	commandLine 'npm', 'run', 'build'
 }
 
 task cleanAll(type: Delete){
@@ -16,9 +16,9 @@ task cleanAll(type: Delete){
 	delete "node_modules"
 	delete ".gradle"
 }
-npm_install.dependsOn(cleanAll)
-appNpmBuild.dependsOn(npm_install)
-copyToBackend.dependsOn(appNpmBuild)
+npmInstall.dependsOn(cleanAll)
+buildFrontend.dependsOn(npm_cache_verify, npmInstall)
+copyFrontend.dependsOn(buildFrontend)
 
 node {
 	// Version of node to use.
