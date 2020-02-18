@@ -21,7 +21,7 @@ jar {
 	}
 }
 
-//jar.dependsOn(':frontend:build')
+jar.dependsOn(':frontend:build')
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
