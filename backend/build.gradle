@@ -14,14 +14,11 @@ repositories {
 }
 
 
+task stage(dependsOn: ['clean', ':frontend:copyToBackend', 'compileJava'])
 
-jar {
-	from('../frontend/build') {
-		into './build/classes/public'
-	}
-}
-
-jar.dependsOn(':frontend:build')
+//build.mustRunAfter(clean, )
+//
+//compileJava.dependsOn(':frontend:copyToBackend')
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'

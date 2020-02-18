@@ -2,41 +2,43 @@ plugins {
 	id "com.moowork.node" version "1.3.1"
 }
 
+task copyToBackend(type: Copy) {
+	from 'build'
+	into '../backend/build/resources/main/static/.'
+}
+
+task appNpmBuild(type: NpmTask) {
+	args = ["run", "build"]
+}
+
+task cleanAll(type: Delete){
+	delete "build"
+	delete "node_modules"
+	delete ".gradle"
+}
+npm_install.dependsOn(cleanAll)
+appNpmBuild.dependsOn(npm_install)
+copyToBackend.dependsOn(appNpmBuild)
+
 node {
 	// Version of node to use.
-	version = '13.1.0'
+//	version = '13.1.0'
 
 	// Base URL for fetching node distributions (change if you have a mirror).
 //    distBaseUrl = 'https://nodejs.org/dist'
 
 	// If true, it will download node using above parameters.
 	// If false, it will try to use globally installed node.
-	download = true
+	download = false
 
 //	// Set the work directory for unpacking node
-//	workDir = file("/nodejs")
+	workDir = file("${project.buildDir}/nodejs")
 //
 //	// Set the work directory for NPM
-//	npmWorkDir = file("/npm")
+	npmWorkDir = file("${project.buildDir}/npm")
 //
 //	// Set the work directory where node_modules should be located
 //	nodeModulesDir = file("/")
 }
 
-task build(type: NpmTask) {
-	args = ['run', 'build']
-}
-
-build.dependsOn(npm_install)
-
-
-/**
- * Cleans everything that is created by the node plugin, i.e. the node installation and the node_modules
- * folder.
- */
-task cleanAll(type: Delete){
-	delete "build"
-	delete "node_modules"
-	delete ".gradle"
-}
 
