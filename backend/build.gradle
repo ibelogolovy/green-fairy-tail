@@ -25,9 +25,9 @@ task runJar(type: JavaExec) {
 //}
 
 task stage(dependsOn:compileJava)
-compileJava.mustRunAfter(clean)
+compileJava.dependsOn(clean)
 compileJava.dependsOn(runJar)
-runJar.mustRunAfter(bootJar)
+runJar.dependsOn(bootJar)
 bootJar.dependsOn(':frontend:copyFrontend')
 
 
