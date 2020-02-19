@@ -24,17 +24,13 @@ task runJar(type: JavaExec) {
 //	}
 //}
 
-task stage(dependsOn:compileJava)
-compileJava.dependsOn(clean)
-compileJava.dependsOn(runJar)
+
+task stage(dependsOn:runJar)
 runJar.dependsOn(bootJar)
-bootJar.dependsOn(':frontend:copyFrontend')
+bootJar.dependsOn(':frontend:copyFrontend').dependsOn(compileJava)
+compileJava.dependsOn(clean)
 
 
-
-//build.mustRunAfter(clean )
-//
-//compileJava.dependsOn(':frontend:copyToBackend')
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
