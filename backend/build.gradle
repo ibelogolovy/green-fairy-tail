@@ -13,10 +13,10 @@ repositories {
 	mavenCentral()
 }
 
+compileJava.dependsOn(':frontend:copyFrontend');
+task stage(dependsOn: ['clean', 'compileJava'])
 
-task stage(dependsOn: ['clean', ':frontend:copyFrontend', 'compileJava'])
-
-//build.mustRunAfter(clean, )
+//build.mustRunAfter(clean )
 //
 //compileJava.dependsOn(':frontend:copyToBackend')
 
