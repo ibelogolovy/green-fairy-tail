@@ -42,20 +42,17 @@
     width: 0%;
   }
 
-  .menu-buttons > a {
+  .menu-buttons ul > li {
+    list-style-type:none;
+    display: inline;
+  }
+
+  .menu-buttons ul {
+    padding: 0;
+  }
+
+  .menu-buttons a {
     color:white;
     text-decoration: none;
   }
  
-
-
-
-  
-  @media (min-width:320px) and (max-width:800px) {
-    .menu-buttons > .button  {
-      font-size: .7rem;
-      margin: 1px;
-      padding: 10px;
-      border: .5px solid #f7f7f7;
-    }
-  }

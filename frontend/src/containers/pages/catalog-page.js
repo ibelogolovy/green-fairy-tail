@@ -1,13 +1,15 @@
 import React from 'react';
 
+import ProductList from '../product-list-container';
+import CategoryListContainer from '../category-list-container';
 
 const CatalogPage = () => {
   return (
 
-        <div className="page-content">
-          <h2>Основная информация</h2>
-              Добро пожаловать!
-              В данной части сайта можно публиковать информацию для заказчиков. Кратко обрисовать ассортимент (так как предполагается, что ниже уже доступен каталог)
+      <div id='catalog'>
+          <h2>Каталог</h2>
+              <CategoryListContainer/>
+              <ProductList/>
       </div>  
 
   );

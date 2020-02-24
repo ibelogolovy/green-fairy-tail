@@ -15,6 +15,11 @@
     color:whitesmoke;
 }
 
+.category-contaiter .category.selected {
+    background-color: #871486;
+    color:whitesmoke;
+}
+
 .category-contaiter {
     display: inline-flex;
     flex-wrap: wrap;

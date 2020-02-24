@@ -15,6 +15,26 @@ const productLoaded = (product) => {
   };
 };
 
+const categoriesRequested = () => {
+  return {
+    type: actionTypes.FETCH_CATEGORIES_REQUESTED
+  };
+};
+
+const categoriesLoaded = (category) => {
+  return {
+    type: actionTypes.FETCH_CATEGORIES_SUCCESS,
+    payload: category
+  };
+};
+
+const categoriesError = (error) => {
+  return {
+    type: actionTypes.FETCH_CATEGORIES_ERROR,
+    payload: error
+  };
+};
+
 const productRequested = () => {
   return {
     type: actionTypes.FETCH_PRODUCT_REQUESTED
@@ -67,9 +87,17 @@ const fetchProduct = (productService) => (id) => (dispatch) => {
     .catch((error) => dispatch(productError(error)));
 };
 
+const fetchCategories = (productService, dispatch) => () => {
+  dispatch(categoriesRequested());
+  productService.getCategories()
+    .then((data) => dispatch(categoriesLoaded(data)))
+    .catch((error) => dispatch(categoriesError(error)));
+};
+
 export {
   fetchProducts,
   fetchProduct,
   aboutCircleOpened,
-  aboutCircleClosed
+  aboutCircleClosed,
+  fetchCategories
 };

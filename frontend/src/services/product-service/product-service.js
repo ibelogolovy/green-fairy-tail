@@ -71,7 +71,21 @@ export default class ProductService {
           fetch('/api/products/', { 
             method: 'get', 
             headers: new Headers({
-              'Authorization': 'Basic '+btoa('database:$2y$12$b.UEJHh.GSbNYZ3H7550xOAPe4iQ2cVBBeNTL/q7jYykiwHcX6icq'), 
+              'Authorization': 'Basic '+btoa('database:welcome1'), 
+              'Content-Type': 'application/x-www-form-urlencoded'
+            })
+          }).then((response) => response.json()).then((responseData) => {
+            resolve(responseData);
+          });
+      });
+    }
+
+    getCategories() {
+        return new Promise((resolve, reject) => {
+          fetch('/api/products/', { 
+            method: 'get', 
+            headers: new Headers({
+              'Authorization': 'Basic '+btoa('database:welcome1'), 
               'Content-Type': 'application/x-www-form-urlencoded'
             })
           }).then((response) => response.json()).then((responseData) => {

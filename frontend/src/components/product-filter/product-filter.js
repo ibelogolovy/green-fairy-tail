@@ -2,23 +2,19 @@ import React from 'react';
 
 import './product-filter.css';
 
-const ProductFilter = () => {
+const ProductFilter = ({ categories = [{ title : 'All', id: '1'}], selectedCategory }) => {
+
+  selectedCategory = selectedCategory === undefined ? categories[0].id : selectedCategory;
+
     return (
       <div className="product-filter">
            По категории:
           <div className = "category-contaiter">
-              <div className="category">
-                  Хвойные
-              </div>
-              <div className="category">
-                  Лиственные
-              </div>
-              <div className="category">
-                  Комнатные
-              </div>
-              <div className="category">
-                  Травяные
-              </div>
+          {categories.map(({ title, id}) => (
+                <div key = { id } className={selectedCategory===id ? "selected category": "category"}>
+                   {title}
+                </div>
+          ))}
           </div>
       </div>
     );

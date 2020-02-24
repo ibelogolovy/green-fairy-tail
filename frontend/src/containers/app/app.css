@@ -9,13 +9,13 @@
     "main main main main main main"
     "footer footer footer footer footer footer";
 }
-@media (min-width:320px) and (max-width:800px) {
+@media (max-width:1224px) {
   [role=main] {
     display: grid;
     grid-template-columns: 6% 22% 22% 22% 22% 6%;
-    grid-template-rows: auto;
+    grid-template-rows: 10% auto auto auto;
     grid-template-areas: 
-    ". . header header . ."
+    ". header header header header ."
     ". navigation navigation navigation navigation ."
     "main main main main main main"
     "footer footer footer footer footer footer";
@@ -49,8 +49,8 @@
 
 /* вращение */
 img.rot {
-  animation: 160s linear 160s normal none infinite running rot;
-  -webkit-animation: 160s linear 10s normal none infinite running rot;
+  animation: 160s linear 0s normal none infinite running rot;
+  -webkit-animation: 160s linear 0s normal none infinite running rot;
 }
 @keyframes rot {
   0% {

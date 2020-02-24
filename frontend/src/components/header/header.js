@@ -1,25 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
+import { useMediaQuery } from 'react-responsive';
+
+import { useSelector } from "react-redux";
 
 import './header.css';
 
 import circle1 from '../../images/Lay1.png';
 import circle2 from '../../images/Lay2.png';
 import circle3 from '../../images/Lay3.png';
+import mobileBack from './images/mobile_back.png';
 import title from '../../images/Title.png';
 
 
-class Header extends Component {
+const Header = () => {
+    const isDesktopOrLaptop = useMediaQuery({
+      query: '(min-width: 1224px)'
+    })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const showAboutCircle = useSelector(state => state.showState.showAboutCircle);
 
-
-
-  render() {
-    const { showAboutCircle } = this.props;
     return (
       <React.Fragment>
+        {isDesktopOrLaptop && 
           <div className="about-info">
               <h2> О нас </h2>
               Мы супер-пупер компаний с 1000 летней историей. Занимаемся всеми видами растений, из любых питомников мира.
@@ -39,6 +43,9 @@ class Header extends Component {
                   </p></div>):<Link to="/about"><p>Подробнее</p></Link>
               }
           </div>
+          }
+
+          {isDesktopOrLaptop && 
             <div className={showAboutCircle ? 'header-back expanded':'header-back'}>
               <div className="back-circle-1">
                   <img className="rot"  src={circle1} width="100%" alt="circle-1" />
@@ -49,22 +56,26 @@ class Header extends Component {
               <div className="back-circle-2">
                   <img className="rot" src={circle2} width="100%" alt="circle-2"/>
               </div> 
+            </div>}
+
+            { isTabletOrMobile && 
+            <div className='mobile-header-back'>
+              <div className="mobile-back">
+                  <img className="mobile-back-image" src={mobileBack} width="100%" alt="circle-1" />
+              </div>
             </div>
+            }
+            
             <header>
               <Link to="/">
                 <img src={title} width="60%" alt="Creen Fairy Tail"/>
               </Link>
-               <div className = "header-info">БЛАУГОУСТРОЙСТВО И ОЗЕЛЕНЕНИЕ | КРУПНОМЕРЫ | ЦВЕТЫ | ДЕРЕВЬЯ</div>
+               {isDesktopOrLaptop &&
+                 <div className = "header-info">БЛАУГОУСТРОЙСТВО И ОЗЕЛЕНЕНИЕ | КРУПНОМЕРЫ | ЦВЕТЫ | ДЕРЕВЬЯ</div>
+                }
             </header>
       </React.Fragment>
     );
-  } 
 };
 
-const mapStateToProps = ({ showState: { showAboutCircle }}) => {
-  return { showAboutCircle };
-};
-
-
-
-export default connect(mapStateToProps)(Header);
+export default Header;

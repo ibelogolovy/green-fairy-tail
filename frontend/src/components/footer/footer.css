@@ -5,24 +5,16 @@ footer  {
     color:whitesmoke;
 }
 
-footer  .contact {
-    margin-right: 17%;
-    margin-top: 1%;
-    float: right;
-}
-
-footer .company {
-    margin-top: 10%;
-    margin-left: 5%;
-    float: left;
-}
-
 .footer-back {
   /* position: absolute; */
   z-index: -2;
   overflow: hidden;
   grid-area: footer;
   height: 11em;
+}
+
+.mobile-footer-back {
+  background-color: #871486;
 }
 
 /* шары на фоне */
@@ -39,3 +31,4 @@ footer .company {
     width:70%;
 }
 /* конец шаров на фоне */
+

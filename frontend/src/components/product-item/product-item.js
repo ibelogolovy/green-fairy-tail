@@ -5,7 +5,8 @@ import './product-item.css';
 import exampleTree from '../../images/example_tree.jpg';
 
 const ProductItem= ({ product }) => {
-  
+    
+    const { name, title, id} = product;
     let imgStyles = {
         backgroundSize: '100%',
         backgroundImage: `url(${exampleTree})`,
@@ -14,14 +15,13 @@ const ProductItem= ({ product }) => {
     };
 
     return (
-
-            <div key={ product.id } className="wrapper">
+            <div key={ id } className="wrapper">
                 <div className="container">
                     <div className="top" style={imgStyles}></div>
                     <div className="bottom">
                     <div className="details">
-                        <h1>{ product.title }</h1>
-                        Дерево крутое
+                        <h1>{ title }</h1>
+                        { name }
                     </div>
                     </div>
                 </div>

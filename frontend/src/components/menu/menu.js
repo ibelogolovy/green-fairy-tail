@@ -1,26 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
+import { useMediaQuery } from 'react-responsive';
+
+
 import './menu.css';
 
 
-const Menu = () => {
+const Menu = ({ menuItems }) => {
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
+
   return (
-        <div className="menu-buttons">
-            <Link to="/about">
-              <div className="button">Каталог</div>
-            </Link>
-            <Link to="/about">
-              <div className="button">О нас</div>
-            </Link>
-            <Link to="/about">
-              <div className="button">Контакты</div>
-            </Link>
-            <Link to="/about">
-              <div className="button">Обратный звонок</div>
-            </Link>
-        </div>
+        <nav className="menu-buttons">
+          <ul>
+            {
+              isDesktopOrLaptop &&
+              menuItems.map(({id, link, text}) => (
+              <li key= {id}>
+                <Link to={link}>
+                  <div className="button current">{text}</div>
+                </Link>
+              </li>
+              ))
+            }
+          </ul>
+        </nav>
+        
   );
 };
+
+
 
 export default Menu;

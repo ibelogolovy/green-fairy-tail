@@ -8,7 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "products")
 public class Product {
     @Id
-    private ObjectId id;
+    private ObjectId _id;
+    private String id;
 
     public Product(String name, String title, Integer category, Double price, String coverImage) {
         this.category = category;
@@ -27,7 +28,13 @@ public class Product {
 
     private Double price;
 
+
+
     private String coverImage;
+
+    public String getId() {
+        return id;
+    }
 
     public String getTitle() {
         return title;
