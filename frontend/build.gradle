@@ -20,7 +20,7 @@ task cleanAll(type: Delete){
 }
 npmInstall.dependsOn(cleanAll)
 // buildFrontend.dependsOn(npm_cache_verify, npmInstall)
-buildFrontend.dependsOn(npm_cache_clean, npmInstall)
+buildFrontend.dependsOn(npmInstall)
 copyFrontend.dependsOn(buildFrontend)
 
 node {
