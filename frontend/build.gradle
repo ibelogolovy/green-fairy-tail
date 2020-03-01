@@ -9,7 +9,7 @@ task copyFrontend(type: Copy) {
 }
 
 task buildFrontend(type: NpmTask) {
-	args = ['run', 'build']
+	args = ['run', 'build --debug']
 }
 
 task cleanAll(type: Delete){
