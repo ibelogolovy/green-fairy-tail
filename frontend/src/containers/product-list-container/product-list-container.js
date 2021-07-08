@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { withProductService } from '../../components/hoc';
 
 import './product-list-container.css'
-import { fetchProducts } from '../../actions';;
+import { fetchProducts } from '../../actions';
 
 
 const ProductListContainer = ({ productService }) => {

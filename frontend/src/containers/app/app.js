@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import MediaQuery from 'react-responsive'
 
-import { HomePage, CatalogPage, AboutPage } from '../pages';
+import { HomePage, AboutPage } from '../pages';
 import { withProductService } from '../../components/hoc';
 import Menu from '../../components/menu';
 import menuItems from '../../constants/menuItems';
@@ -29,11 +29,6 @@ class App extends Component {
               path="/"
               component = {HomePage}
               exact />
-
-            <Route
-              path="/products"
-              component = {CatalogPage}
-            />
 
             <Route
               path="/about"

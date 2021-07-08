@@ -19,6 +19,7 @@ const Header = () => {
       query: '(min-width: 1224px)'
     })
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isLargeDesktop = useMediaQuery({ query: '(min-width: 1550px)' })
     const showAboutCircle = useSelector(state => state.showState.showAboutCircle);
 
     return (
@@ -70,7 +71,7 @@ const Header = () => {
               <Link to="/">
                 <img src={title} width="60%" alt="Creen Fairy Tail"/>
               </Link>
-               {isDesktopOrLaptop &&
+               {isDesktopOrLaptop && !isLargeDesktop &&
                  <div className = "header-info">БЛАУГОУСТРОЙСТВО И ОЗЕЛЕНЕНИЕ | КРУПНОМЕРЫ | ЦВЕТЫ | ДЕРЕВЬЯ</div>
                 }
             </header>

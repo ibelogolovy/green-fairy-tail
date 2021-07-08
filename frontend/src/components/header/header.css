@@ -97,30 +97,6 @@ transition: 2s;
 background-color: #871486;
 }
 
-/* конец шаров на фоне */
-/* @media all and (max-width:800px) { */
-/* шары на фоне
-.header-back > .back-circle-1 {
-  width:100%;
-  margin-top:-50%;
-} */
 
-/* .header-back > .back-circle-3 {
-  width:70%;
-  margin-top: -15%;
-  margin-left: -30%;
-} */
-
-/* .header-back > .back-circle-2 {
-  margin-top: -68%;
-  margin-left: 58%;
-  width:70%;
-   */
-/* } */
-/* конец шаров на фоне */
-/* .about-info {
-  display: none;
-} */
-/* } */
 
 
