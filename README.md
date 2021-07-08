@@ -1,5 +1,5 @@
 ## Green Fairy Tail
-This project is developed for a learning purpose. 
+This project is developed for a learning purpose (also in desing - this tree circles are created from zero). 
 
 ## Stack
 
