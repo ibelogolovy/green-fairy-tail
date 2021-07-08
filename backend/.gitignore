@@ -1,6 +1,6 @@
 .DS_Store
 .gradle
-#/build/
+/build/
 classes
 !gradle/wrapper/gradle-wrapper.jar
 
