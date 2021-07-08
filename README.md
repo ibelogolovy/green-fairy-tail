@@ -12,4 +12,4 @@ Backend: Spring Boot, MongoDB
 - Database is based on [MongoDB Atlas Database](https://www.mongodb.com/)
 - The application is assumed to be compatible with Heroku. Example - https://green-fairy.herokuapp.com/
 
-![Demo](https://github.com/ibelogolovy/green-fairy-tail.git)
+![Demo](https://github.com/ibelogolovy/green-fairy-tail/blob/master/demo.gif?raw=true)
